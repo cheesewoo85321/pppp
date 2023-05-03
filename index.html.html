@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>상자 리스트</title>
+  <style>
+    .box {
+      display: inline-block; /* 가로로 정렬 */
+      width: 800px;
+      height: 200px;
+      border: 1px solid black;
+      margin: 10px;
+      text-align: left;
+    }
+    .box img {
+      width: 150px;
+      height: 150px;
+      margin-top: 20px;
+      margin-left: 10px;
+      float: left
+    }
+    .box h3 {
+      margin-top: 20px;
+    }
+    .box p {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const data = [
+      {
+        imgSrc: './경보아스피린장용정.jpg',
+        imgAlt: '경보아스피린장용정',
+        title: '경보아스피린장용정 [경보제약(주)]',
+        content: '효과 : 관상동맥 우회술(CABG) 또는 경피경관 관상동맥 성형술(PTCA) 후 혈전 생성 억제, 고위험군환자에서 심혈관계 위험성 감소'
+      },
+      {
+        imgSrc: './게보린 소프트 연질 캡슐.jpg',
+        imgAlt: '게보린 소프트 연질 캡슐',
+        title: '게보린 소프트 연질 캡슐 [삼진제약(주)]',
+        content: '효과 : 두통, 치통, 발치후 통증, 인후통, 귀의 통증, 관절통, 신경통, 요통, 근육통, 견통, 타박통, 골절통, 염좌통, 월경통, 외상통의 진통, 오한, 발열시의 해열',
+      },
+      {
+        imgSrc: './고프레노즈연질캡슐.jpg',
+        imgAlt: '고프레노즈연질캡슐 ',
+        title: '고프레노즈연질캡슐 [국제약품(주)]',
+        content: '효과 : 감기의 제증상(콧물, 코막힘, 재채기, 인후통, 오한, 발열, 두통, 관절통, 근육통)의 완화'
+      },
+      {
+        imgSrc: './골드라민정.jpg',
+        imgAlt: '골드라민정',
+        title: '골드라민정 [에이프로젠바이오로직스(주)]',
+        content: '효과 : 비타민A 보급'
+      },
+      {
+        imgSrc: './굿엔콜액.jpg',
+        imgAlt: '굿엔콜액',
+        title: '굿엔콜액 [광동제약(주)]',
+        content: '효과 : 감기의 제증상(콧물, 코막힘, 재채기, 인후통, 기침, 가래, 오한, 발열, 두통, 관절통, 근육통)의 완화'
+      },
+      {
+        imgSrc: './그날엔큐정.jpg',
+        imgAlt: '그날엔큐정',
+        title: '그날엔큐정 [경동제약(주)]',
+        content: '효과 : 두통, 치통, 발치후 통증, 인후통, 귀의 통증, 관절통, 신경통, 요통, 근육통, 어깨통증, 타박통, 골절통, 염좌통, 생리통, 외상통의 진통, 오한, 발열 시 해열'
+      },
+      {
+        imgSrc: './그라제정.jpg',
+        imgAlt: '그라제정',
+        title: '그라제정 [광동제약(주)]',
+        content: '효과: 소화불량, 식욕감퇴(식욕부진), 과식, 체함, 소화촉진, 소화불량으로 인한 위부팽만감'
+      },
+      {
+        imgSrc: './그린노즈시럽.jpg',
+        imgAlt: '그린노즈시럽',
+        title: '그린노즈시럽 [녹십자(주)]',
+        content: '효과: 코감기, 알레르기 및 혈관운동성 코염에 의한 다음 증상의 완화 : 재채기, 콧물, 코막힘, 눈물'
+      },
+      {
+        imgSrc: './발렌시아연질캡슐.jpg',
+        imgAlt: '발렌시아연질캡슐',
+        title: '발렌시아연질캡슐 [태극제약(주)]',
+        content: '효과: 비만증, 당뇨성ㆍ본태성 고콜레스테롤혈증에 의한 지질대사 개선'
+      },
+      {
+        imgSrc: './글루메트정.jpg',
+        imgAlt: '글루메트정',
+        title: '글루메트정 [일화]',
+        content: '효과: 식이요법 및 운동요법을 통해 혈당 조절이 충분치 않은 제2형 당뇨병 환자의 치료. (특히, 과체중인 당뇨병 환자)'
+      },
+      {
+        imgSrc: './경동아스피린.jpg',
+        imgAlt: '경동아스피린장용정',
+        title: '경동아스피린장용정 [경동제약(주)]',
+        content: '효과: 심근경색, 뇌경색, 불안정형 협심증에서의 혈전생성 억제'
+      },
+      {
+        imgSrc: './크레메진세립.jpg',
+        imgAlt: '크레메진세립',
+        title: '크레메진세립 [에이치케이이노엔]',
+        content: '효과: 만성신부전(진행성)에 대한 요독증 증상의 개선 및 투석도입의 지연'
+      },
+      {
+        imgSrc: './가네원연질캡슐.jpg',
+        imgAlt: '가네원연질캡슐',
+        title: '가네원연질캡슐 [대원제약(주)]',
+        content: '효과 : 독성간질환, 만성간염, 간경변의 보조치료(간 관련 영양제)'
+      },
+      {
+        imgSrc: './네로민정.jpg',
+        imgAlt: '네로민정',
+        title: '네로민정 [한풍제약(주)]',
+        content: '효과 : 만성신부전에 의한 질소혈증환자의 비타민 B, C 보급'
+      },
+      {
+        imgSrc: './그날엔노즈연질캡슐.jpg',
+        imgAlt: '그날엔노즈연질캡슐',
+        title: '그날엔노즈연질캡슐 [경동제약(주)]',
+        content: '효과 : 감기의 제증상(콧물, 코막힘, 재채기, 인후통, 오한, 발열, 두통, 관절통, 근육통)의 완화'
+      },
+      {
+        imgSrc: './탁센400이부프로펜.jpg',
+        imgAlt: '탁센400이부프로펜연질캡슐정',
+        title: '탁센400이부프로펜연질캡슐 [녹십자]',
+        content: '효과 : 감기로 인한 발열 및 통증, 요통, 생리통, 류마티양 관절염, 연소성 류마티양 관절염, 골관절염, 수술후 통증, 두통, 편두통, 치통, 근육통, 신경통, 강직성 척추염, 급성통풍, 건선성 관절염, 연조직손상, 좌상, 비관절 류마티스질환, 건초염, 활액낭염)'
+      },
+      {
+        imgSrc: './타이레놀정.jpg',
+        imgAlt: '타이레놀정',
+        title: '타이레놀정 [한국얀센]',
+        content: '효과 : 감기로 인한 발열 및 통증, 두통, 신경통, 근육통, 월경통, 염좌통, 치통, 관절통, 류마티양 통증'
+      },
+      {
+        imgSrc: './글루콤.jpg',
+        imgAlt: '글루콤액',
+        title: '글루콤액 [한국얀센]',
+        content: '효과 : 병중ㆍ병후회복기, 소모성질환등의 영양공급, 육체피로, 자양강장'
+      },
+      {
+        imgSrc: './큐업.jpg',
+        imgAlt: '큐업',
+        title: '큐업 [고려제약]',
+        content: '효과 : 피로회복, 육체피로, 병중ㆍ병후 영양보급'
+      },
+      {
+        imgSrc: './타세놀8시간이알서방정.jpg',
+        imgAlt: '타세놀8시간이알서방정',
+        title: '타세놀8시간이알서방정 [부광약품]',
+        content: '효과 : 해열 및 감기에 의한 통증과 두통, 치통, 근육통, 허리통증, 생리통, 관절통의 완화'
+      },
+      {
+        imgSrc: './액티피드정.jpg',
+        imgAlt: '액티피드정',
+        title: '액티피드정 [삼일제약]',
+        content: '효과 : 코감기, 알레르기 및 혈관운동성 코염에 의한 다음 증상의 완화 : 재채기, 콧물, 코막힘'
+      },
+      {
+        imgSrc: './다제스캡슐.jpg',
+        imgAlt: '다제스캡슐',
+        title: '다제스캡슐 [한림제약]',
+        content: '효과 : 소화불량, 식욕감퇴(식욕부진), 과식, 체함, 소화촉진, 소화불량으로 인한 위부팽만감에 대한 도움'
+      }
+      
+      // 나머지 데이터 추가
+    ];
+
+    // 데이터를 이용하여 상자를 생성하는 함수
+    function createBox({imgSrc, imgAlt, title, content}) {
+      const box = document.createElement('div');
+      box.className = 'box';
+      box.innerHTML = `
+        <img src="${imgSrc}" alt="${imgAlt}">
+        <h3>${title}</h3>
+        <p>${content}</p>
+      `;
+      return box;
+    }
+
+    // 상자를 담을 컨테이너 요소
+    const container = document.createElement('div');
+
+    // 상자를 생성하여 컨테이너에 추가
+    data.forEach(item => {
+      const box = createBox(item);
+      container.appendChild(box);
+    });
+
+    // 컨테이너를 body에 추가
+    document.body.appendChild(container);
+  </script>
+</body>
+</html>
